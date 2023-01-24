@@ -16,13 +16,13 @@ function App() {
             <Routes>
                 <Route path="/" element={<DefaultPage />} />
                 <Route path="/auth" element={<Auth />} />
-                <Route path='/forgotpassword' element={<ForgotPassword />} /> 
-                <Route path="/reset/:userId/:token" element={<ResetPasswordForm/>} />
+                <Route path='/forgotpassword' element={<ForgotPassword />} />
+                <Route path="/reset/:userId/:token" element={<ResetPasswordForm />} />
                 <Route path="/learn" element={<Learn />} />
                 <Route path="/allsubjects" element={<AllSubjects />} />
                 <Route path="/mycourses" element={<MyCourses />} />
                 <Route path="/mymodules" element={<MyModules />} />
-          </Routes>
+            </Routes>
         </BrowserRouter>
     )
 }

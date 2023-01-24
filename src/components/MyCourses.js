@@ -1,30 +1,24 @@
 import React from 'react';
-export function MyCourses() {
+import my_courses from '../data/mycourses_data';
 
+export function MyCourses() {
+    console.log(my_courses);
+    const listItems = my_courses.map((item)=>
+        <div className='card' key={item.id}>
+            <div className='card_img'>
+                <img src={item.thumb} />
+            </div>
+            <div className='card_header'>
+                <h2>{item.product_name}</h2>
+                <p>{item.description}</p>
+                <p className='price'>{item.price}<span>{item.currency}</span></p>
+                <div className='btn'>Pursue Course</div>
+            </div>
+        </div>
+    );
     return (
-        <div className="Auth-form-container">
-        <form className="Auth-form">
-           <div>
-               <h3 className="Auth-form-title" >Here Are All The Courses You Enrolled To </h3>
-           </div>
-           <div className="Auth-form-content">
-           <div className="d-grid gap-2 mt-3">
-               <button className="btn btn-primary" type="button" >
-               Beginning Pottery
-               </button>
-           </div>
-           <div className="d-grid gap-2 mt-3">
-           <button className="btn btn-primary" type="button" >
-           Raw Materials 
-           </button>
-           </div>
-           <div className="d-grid gap-2 mt-3">
-           <button className="btn btn-primary" type="button">
-           Ceramics: problems in design
-           </button>
-           </div>
-           </div>
-         </form>
-       </div>
+        <div className='MyCourses'>
+            {listItems}
+        </div>
     )
 }

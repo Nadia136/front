@@ -1,25 +1,24 @@
 import React from 'react';
-export function AllSubjects() {
+import all_subjects from '../data/allsubjects_data';
 
+export function AllSubjects() {
+    console.log(all_subjects);
+    const listItems = all_subjects.map((item)=>
+        <div className='card' key={item.id}>
+            <div className='card_img'>
+                <img src={item.thumb} />
+            </div>
+            <div className='card_header'>
+                <h2>{item.product_name}</h2>
+                <p>{item.description}</p>
+                <p className='price'>{item.price}<span>{item.currency}</span></p>
+                <div className='btn'>Pursue Course</div>
+            </div>
+        </div>
+    );
     return (
-        <div className="Auth-form-container">
-            <form className="Auth-form">
-                <div>
-                    <h3 className="Auth-form-title"> Here Are All The Subjects Available in CollabArt </h3>
-                </div>
-                <div className="Auth-form-content">
-                    <div className="d-grid gap-2 mt-3">
-                            <button className="btn btn-primary" type="button" >
-                             Pottery
-                            </button>
-                    </div>
-                    <div className="d-grid gap-2 mt-3">
-                        <button className="btn btn-primary" type="button" >
-                            Design
-                        </button>
-                    </div>
-                </div>
-            </form>
+        <div className='MyCourses'>
+            {listItems}
         </div>
     )
 }
